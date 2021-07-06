@@ -10831,6 +10831,9 @@ article.article .content h4 {
 article.article .content h5 {
   font-size: 1em;
 }
+article.article .content hr {
+  background-color: #dbdbdb;
+}
 article.article .content pre {
   font-size: 0.85em;
 }
@@ -11240,7 +11243,6 @@ figure.highlight {
   position: relative;
   margin: 1em 0 1em !important;
   border-radius: 0;
-  background: #47586d;
 }
 figure.highlight.folded .highlight-body {
   height: 0;
@@ -11272,26 +11274,6 @@ figure.highlight pre {
 figure.highlight pre .line,
 figure.highlight pre code .hljs {
   line-height: 1.5rem;
-  color: #d7d4f0;
-}
-figure.highlight pre .hljs-keyword,
-figure.highlight pre .hljs-number {
-  color: #c38fe5;
-}
-figure.highlight pre .hljs-title,
-figure.highlight pre .hljs-params {
-  color: #ffeb3b;
-}
-figure.highlight pre .hljs-built_in {
-  color: #fff;
-}
-figure.highlight pre .hljs-built_in {
-  color: #4caf50;
-}
-figure.highlight figcaption,
-figure.highlight .gutter {
-  background: #47586d;
-  color: #fff;
 }
 figure.highlight figcaption {
   margin: 0 !important;
