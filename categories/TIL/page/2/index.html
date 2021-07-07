@@ -231,7 +231,123 @@
 
 <p>해당 문제에선 Queue의 삭제 기능만을 사용하여 쉽게 구현할 수 있었다.</p>
 <br/>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">2021, 6월 30일, 수요일 오전 2:00</span><span class="level-item"><a class="link-muted" href="/categories/TIL/">TIL</a><span> / </span><a class="link-muted" href="/categories/TIL/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a><span> / </span><a class="link-muted" href="/categories/TIL/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/">프로그래머스</a><span> / </span><a class="link-muted" href="/categories/TIL/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/lv2/">lv2</a></span><span class="level-item">12분안에 읽기 (약 1763 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/06/30/6a4d69353cdc/">[프로그래머스] 메뉴 리뉴얼</a></h1><img src="/img/programmers.png" width="80%" style="margin: 3.0em auto;display:block"><div class="content"><h1 id="메뉴-리뉴얼"><a href="#메뉴-리뉴얼" class="headerlink" title="메뉴 리뉴얼"></a>메뉴 리뉴얼</h1><p>JavaScript, Python</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">2021, 6월 30일, 수요일 오전 2:00</span><span class="level-item"><a class="link-muted" href="/categories/TIL/">TIL</a><span> / </span><a class="link-muted" href="/categories/TIL/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a><span> / </span><a class="link-muted" href="/categories/TIL/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/">프로그래머스</a><span> / </span><a class="link-muted" href="/categories/TIL/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/lv2/">lv2</a></span><span class="level-item">5분안에 읽기 (약 801 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/06/30/0fdb836c5994/">[프로그래머스] 다리를 지나는 트럭</a></h1><img src="/img/programmers.png" width="80%" style="margin: 3.0em auto;display:block"><div class="content"><h1 id="다리를-지나는-트럭"><a href="#다리를-지나는-트럭" class="headerlink" title="다리를 지나는 트럭"></a>다리를 지나는 트럭</h1><p>JavaScript, Python</p>
+<blockquote>
+<h6 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h6><p>트럭 여러 대가 강을 가로지르는 일 차선 다리를 정해진 순으로 건너려 합니다. 모든 트럭이 다리를 건너려면 최소 몇 초가 걸리는지 알아내야 합니다. 트럭은 1초에 1만큼 움직이며, 다리 길이는 bridge_length이고 다리는 무게 weight까지 견딥니다.<br>※ 트럭이 다리에 완전히 오르지 않은 경우, 이 트럭의 무게는 고려하지 않습니다.</p>
+<p>예를 들어, 길이가 2이고 10kg 무게를 견디는 다리가 있습니다. 무게가 [7, 4, 5, 6]kg인 트럭이 순서대로 최단 시간 안에 다리를 건너려면 다음과 같이 건너야 합니다.</p>
+<table>
+<thead>
+<tr>
+<th>경과 시간</th>
+<th>다리를 지난 트럭</th>
+<th>다리를 건너는 트럭</th>
+<th>대기 트럭</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>[]</td>
+<td>[]</td>
+<td>[7,4,5,6]</td>
+</tr>
+<tr>
+<td>1~2</td>
+<td>[]</td>
+<td>[7]</td>
+<td>[4,5,6]</td>
+</tr>
+<tr>
+<td>3</td>
+<td>[7]</td>
+<td>[4]</td>
+<td>[5,6]</td>
+</tr>
+<tr>
+<td>4</td>
+<td>[7]</td>
+<td>[4,5]</td>
+<td>[6]</td>
+</tr>
+<tr>
+<td>5</td>
+<td>[7,4]</td>
+<td>[5]</td>
+<td>[6]</td>
+</tr>
+<tr>
+<td>6~7</td>
+<td>[7,4,5]</td>
+<td>[6]</td>
+<td>[]</td>
+</tr>
+<tr>
+<td>8</td>
+<td>[7,4,5,6]</td>
+<td>[]</td>
+<td>[]</td>
+</tr>
+</tbody></table>
+<p>따라서, 모든 트럭이 다리를 지나려면 최소 8초가 걸립니다.</p>
+<p>solution 함수의 매개변수로 다리 길이 bridge_length, 다리가 견딜 수 있는 무게 weight, 트럭별 무게 truck_weights가 주어집니다. 이때 모든 트럭이 다리를 건너려면 최소 몇 초가 걸리는지 return 하도록 solution 함수를 완성하세요.</p>
+<h5 id="제한-조건"><a href="#제한-조건" class="headerlink" title="제한 조건"></a>제한 조건</h5><ul>
+<li>  bridge_length는 1 이상 10,000 이하입니다.</li>
+<li>  weight는 1 이상 10,000 이하입니다.</li>
+<li>  truck_weights의 길이는 1 이상 10,000 이하입니다.</li>
+<li>  모든 트럭의 무게는 1 이상 weight 이하입니다.</li>
+</ul>
+<h5 id="입출력-예"><a href="#입출력-예" class="headerlink" title="입출력 예"></a>입출력 예</h5><table>
+<thead>
+<tr>
+<th>bridge_length</th>
+<th>weight</th>
+<th>truck_weights</th>
+<th>return</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>10</td>
+<td>[7,4,5,6]</td>
+<td>8</td>
+</tr>
+<tr>
+<td>100</td>
+<td>100</td>
+<td>[10]</td>
+<td>101</td>
+</tr>
+<tr>
+<td>100</td>
+<td>100</td>
+<td>[10,10,10,10,10,10,10,10,10,10]</td>
+<td>110</td>
+</tr>
+</tbody></table>
+<p><a target="_blank" rel="noopener" href="http://icpckorea.org/2016/ONLINE/problem.pdf">출처</a></p>
+<p>※ 공지 - 2020년 4월 06일 테스트케이스가 추가되었습니다.</p>
+</blockquote>
+<br/>
+
+<h1 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h1><h4 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">bridge_length, weight, truck_weights</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> answer = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> on_bridge_weight = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> on_bridge = [];</span><br><span class="line">    <span class="keyword">while</span>(truck_weights.length || on_bridge.length)&#123;</span><br><span class="line">        </span><br><span class="line">        on_bridge.forEach(<span class="function">(<span class="params">truck</span>)=&gt;</span>&#123;</span><br><span class="line">            truck[<span class="number">0</span>]--;</span><br><span class="line">        &#125;)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(on_bridge.length &amp;&amp; on_bridge[<span class="number">0</span>][<span class="number">0</span>] === <span class="number">0</span>)&#123;</span><br><span class="line">            on_bridge_weight -= on_bridge.shift()[<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(on_bridge_weight + truck_weights[<span class="number">0</span>] &lt;= weight)&#123;</span><br><span class="line">            <span class="keyword">var</span> cur_truck = truck_weights.shift()</span><br><span class="line">            on_bridge.push([bridge_length,cur_truck]);</span><br><span class="line">            on_bridge_weight += cur_truck;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        answer++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> answer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="python"><a href="#python" class="headerlink" title="python"></a>python</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">bridge_length, weight, truck_weights</span>):</span></span><br><span class="line">    b = []</span><br><span class="line">    answer = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="built_in">len</span>(truck_weights) <span class="keyword">or</span> <span class="built_in">len</span>(b):</span><br><span class="line">        answer += <span class="number">1</span></span><br><span class="line">        returns = -<span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(b)):</span><br><span class="line">            <span class="keyword">if</span> b[i][<span class="number">1</span>] == <span class="number">1</span>:        </span><br><span class="line">                returns = i</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                b[i][<span class="number">1</span>] -= <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(returns+<span class="number">1</span>):</span><br><span class="line">            b.pop(<span class="number">0</span>)</span><br><span class="line">        </span><br><span class="line">        count = <span class="built_in">sum</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> a:a[<span class="number">0</span>],b))</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(truck_weights) <span class="keyword">and</span> count + truck_weights[<span class="number">0</span>] &lt;= weight:</span><br><span class="line">            t = truck_weights.pop(<span class="number">0</span>)</span><br><span class="line">            b.append([t,bridge_length])</span><br><span class="line">            count += t</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+
+<h4 id="python-간략화"><a href="#python-간략화" class="headerlink" title="python 간략화"></a><span style="color:#f46049">python 간략화</span></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">bridge_length, weight, truck_weights</span>):</span></span><br><span class="line">    q = [<span class="number">0</span>] * bridge_length</span><br><span class="line">    q_sum = <span class="number">0</span></span><br><span class="line">    answer = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> q:</span><br><span class="line">        answer += <span class="number">1</span></span><br><span class="line">        q_sum -= q.pop(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">if</span> truck_weights:</span><br><span class="line">            <span class="keyword">if</span> q_sum + truck_weights[<span class="number">0</span>] &lt;= weight:</span><br><span class="line">                t_pop = truck_weights.pop(<span class="number">0</span>)</span><br><span class="line">                q.append(t_pop)</span><br><span class="line">                q_sum += t_pop</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                q.append(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+
+
+<br/>
+
+<br/>
+
+<h1 id="설명"><a href="#설명" class="headerlink" title="설명"></a>설명</h1><br/>
+
+<p>큐와 스택의 심화 문제다.<br>다리(bridge)의 상태를 큐로 표현하여 풀었다.</p>
+<p>문제에서 주어진 트럭의 무게 배열을 중심으로 while문을 이용한 풀이는 O(N<sup>3</sup>)를 보였다.<br>그러나 인터넷에는 bridge를 중심으로 풀이한 O(N<sup>2</sup>) 풀이가 있다.  </p>
+<p>python의 pop(0)은 O(N)을 가지는 것을 감안해도 매우 효율적인 방법이다.<br>당연히 풀이 코드 또한 훨씬 간결하다.  </p>
+<p>(인터넷의 풀이에는 sum을 while문 안에서 사용하여 효율성이 조금 떨어졌는데,<br>sum 변수를 활용하여 이를 개선시켰다.)</p>
+<p>앞으로도 문제에서 주어진 변수에만 집중하는 버릇을 경계해야겠다.</p>
+<br/>
+
+<br/></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">2021, 6월 30일, 수요일 오전 2:00</span><span class="level-item"><a class="link-muted" href="/categories/TIL/">TIL</a><span> / </span><a class="link-muted" href="/categories/TIL/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a><span> / </span><a class="link-muted" href="/categories/TIL/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/">프로그래머스</a><span> / </span><a class="link-muted" href="/categories/TIL/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/lv2/">lv2</a></span><span class="level-item">12분안에 읽기 (약 1763 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/06/30/6a4d69353cdc/">[프로그래머스] 메뉴 리뉴얼</a></h1><img src="/img/programmers.png" width="80%" style="margin: 3.0em auto;display:block"><div class="content"><h1 id="메뉴-리뉴얼"><a href="#메뉴-리뉴얼" class="headerlink" title="메뉴 리뉴얼"></a>메뉴 리뉴얼</h1><p>JavaScript, Python</p>
 <blockquote>
 <h6 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h6><p>레스토랑을 운영하던 <code>스카피</code>는 코로나19로 인한 불경기를 극복하고자 메뉴를 새로 구성하려고 고민하고 있습니다.<br>기존에는 단품으로만 제공하던 메뉴를 조합해서 코스요리 형태로 재구성해서 새로운 메뉴를 제공하기로 결정했습니다. 어떤 단품메뉴들을 조합해서 코스요리 메뉴로 구성하면 좋을 지 고민하던 “스카피”는 이전에 각 손님들이 주문할 때 가장 많이 함께 주문한 단품메뉴들을 코스요리 메뉴로 구성하기로 했습니다.<br>단, 코스요리 메뉴는 최소 2가지 이상의 단품메뉴로 구성하려고 합니다. 또한, 최소 2명 이상의 손님으로부터 주문된 단품메뉴 조합에 대해서만 코스요리 메뉴 후보에 포함하기로 했습니다.</p>
 <p>예를 들어, 손님 6명이 주문한 단품메뉴들의 조합이 다음과 같다면,<br>(각 손님은 단품메뉴를 2개 이상 주문해야 하며, 각 단품메뉴는 A ~ Z의 알파벳 대문자로 표기합니다.)</p>
@@ -411,123 +527,7 @@
 <p>그런데 최대공약수를 이용한 풀이도 존재했다.</p>
 <p>w와 h 입장에서 선이 지나가서 못쓸만한 사각형들을 모두 빼고,<br>중복으로 제거된 칸의 개수(최대공약수) 만큼 더하면 된다.</p>
 <br/>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">2021, 6월 30일, 수요일 오전 2:00</span><span class="level-item"><a class="link-muted" href="/categories/TIL/">TIL</a><span> / </span><a class="link-muted" href="/categories/TIL/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a><span> / </span><a class="link-muted" href="/categories/TIL/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/">프로그래머스</a><span> / </span><a class="link-muted" href="/categories/TIL/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/lv2/">lv2</a></span><span class="level-item">5분안에 읽기 (약 801 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/06/30/0fdb836c5994/">[프로그래머스] 다리를 지나는 트럭</a></h1><img src="/img/programmers.png" width="80%" style="margin: 3.0em auto;display:block"><div class="content"><h1 id="다리를-지나는-트럭"><a href="#다리를-지나는-트럭" class="headerlink" title="다리를 지나는 트럭"></a>다리를 지나는 트럭</h1><p>JavaScript, Python</p>
-<blockquote>
-<h6 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h6><p>트럭 여러 대가 강을 가로지르는 일 차선 다리를 정해진 순으로 건너려 합니다. 모든 트럭이 다리를 건너려면 최소 몇 초가 걸리는지 알아내야 합니다. 트럭은 1초에 1만큼 움직이며, 다리 길이는 bridge_length이고 다리는 무게 weight까지 견딥니다.<br>※ 트럭이 다리에 완전히 오르지 않은 경우, 이 트럭의 무게는 고려하지 않습니다.</p>
-<p>예를 들어, 길이가 2이고 10kg 무게를 견디는 다리가 있습니다. 무게가 [7, 4, 5, 6]kg인 트럭이 순서대로 최단 시간 안에 다리를 건너려면 다음과 같이 건너야 합니다.</p>
-<table>
-<thead>
-<tr>
-<th>경과 시간</th>
-<th>다리를 지난 트럭</th>
-<th>다리를 건너는 트럭</th>
-<th>대기 트럭</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0</td>
-<td>[]</td>
-<td>[]</td>
-<td>[7,4,5,6]</td>
-</tr>
-<tr>
-<td>1~2</td>
-<td>[]</td>
-<td>[7]</td>
-<td>[4,5,6]</td>
-</tr>
-<tr>
-<td>3</td>
-<td>[7]</td>
-<td>[4]</td>
-<td>[5,6]</td>
-</tr>
-<tr>
-<td>4</td>
-<td>[7]</td>
-<td>[4,5]</td>
-<td>[6]</td>
-</tr>
-<tr>
-<td>5</td>
-<td>[7,4]</td>
-<td>[5]</td>
-<td>[6]</td>
-</tr>
-<tr>
-<td>6~7</td>
-<td>[7,4,5]</td>
-<td>[6]</td>
-<td>[]</td>
-</tr>
-<tr>
-<td>8</td>
-<td>[7,4,5,6]</td>
-<td>[]</td>
-<td>[]</td>
-</tr>
-</tbody></table>
-<p>따라서, 모든 트럭이 다리를 지나려면 최소 8초가 걸립니다.</p>
-<p>solution 함수의 매개변수로 다리 길이 bridge_length, 다리가 견딜 수 있는 무게 weight, 트럭별 무게 truck_weights가 주어집니다. 이때 모든 트럭이 다리를 건너려면 최소 몇 초가 걸리는지 return 하도록 solution 함수를 완성하세요.</p>
-<h5 id="제한-조건"><a href="#제한-조건" class="headerlink" title="제한 조건"></a>제한 조건</h5><ul>
-<li>  bridge_length는 1 이상 10,000 이하입니다.</li>
-<li>  weight는 1 이상 10,000 이하입니다.</li>
-<li>  truck_weights의 길이는 1 이상 10,000 이하입니다.</li>
-<li>  모든 트럭의 무게는 1 이상 weight 이하입니다.</li>
-</ul>
-<h5 id="입출력-예"><a href="#입출력-예" class="headerlink" title="입출력 예"></a>입출력 예</h5><table>
-<thead>
-<tr>
-<th>bridge_length</th>
-<th>weight</th>
-<th>truck_weights</th>
-<th>return</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>2</td>
-<td>10</td>
-<td>[7,4,5,6]</td>
-<td>8</td>
-</tr>
-<tr>
-<td>100</td>
-<td>100</td>
-<td>[10]</td>
-<td>101</td>
-</tr>
-<tr>
-<td>100</td>
-<td>100</td>
-<td>[10,10,10,10,10,10,10,10,10,10]</td>
-<td>110</td>
-</tr>
-</tbody></table>
-<p><a target="_blank" rel="noopener" href="http://icpckorea.org/2016/ONLINE/problem.pdf">출처</a></p>
-<p>※ 공지 - 2020년 4월 06일 테스트케이스가 추가되었습니다.</p>
-</blockquote>
-<br/>
-
-<h1 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h1><h4 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">solution</span>(<span class="params">bridge_length, weight, truck_weights</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> answer = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> on_bridge_weight = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> on_bridge = [];</span><br><span class="line">    <span class="keyword">while</span>(truck_weights.length || on_bridge.length)&#123;</span><br><span class="line">        </span><br><span class="line">        on_bridge.forEach(<span class="function">(<span class="params">truck</span>)=&gt;</span>&#123;</span><br><span class="line">            truck[<span class="number">0</span>]--;</span><br><span class="line">        &#125;)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(on_bridge.length &amp;&amp; on_bridge[<span class="number">0</span>][<span class="number">0</span>] === <span class="number">0</span>)&#123;</span><br><span class="line">            on_bridge_weight -= on_bridge.shift()[<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(on_bridge_weight + truck_weights[<span class="number">0</span>] &lt;= weight)&#123;</span><br><span class="line">            <span class="keyword">var</span> cur_truck = truck_weights.shift()</span><br><span class="line">            on_bridge.push([bridge_length,cur_truck]);</span><br><span class="line">            on_bridge_weight += cur_truck;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        answer++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> answer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="python"><a href="#python" class="headerlink" title="python"></a>python</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">bridge_length, weight, truck_weights</span>):</span></span><br><span class="line">    b = []</span><br><span class="line">    answer = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="built_in">len</span>(truck_weights) <span class="keyword">or</span> <span class="built_in">len</span>(b):</span><br><span class="line">        answer += <span class="number">1</span></span><br><span class="line">        returns = -<span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(b)):</span><br><span class="line">            <span class="keyword">if</span> b[i][<span class="number">1</span>] == <span class="number">1</span>:        </span><br><span class="line">                returns = i</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                b[i][<span class="number">1</span>] -= <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(returns+<span class="number">1</span>):</span><br><span class="line">            b.pop(<span class="number">0</span>)</span><br><span class="line">        </span><br><span class="line">        count = <span class="built_in">sum</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> a:a[<span class="number">0</span>],b))</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(truck_weights) <span class="keyword">and</span> count + truck_weights[<span class="number">0</span>] &lt;= weight:</span><br><span class="line">            t = truck_weights.pop(<span class="number">0</span>)</span><br><span class="line">            b.append([t,bridge_length])</span><br><span class="line">            count += t</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
-
-<h4 id="python-간략화"><a href="#python-간략화" class="headerlink" title="python 간략화"></a><span style="color:#f46049">python 간략화</span></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">bridge_length, weight, truck_weights</span>):</span></span><br><span class="line">    q = [<span class="number">0</span>] * bridge_length</span><br><span class="line">    q_sum = <span class="number">0</span></span><br><span class="line">    answer = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> q:</span><br><span class="line">        answer += <span class="number">1</span></span><br><span class="line">        q_sum -= q.pop(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">if</span> truck_weights:</span><br><span class="line">            <span class="keyword">if</span> q_sum + truck_weights[<span class="number">0</span>] &lt;= weight:</span><br><span class="line">                t_pop = truck_weights.pop(<span class="number">0</span>)</span><br><span class="line">                q.append(t_pop)</span><br><span class="line">                q_sum += t_pop</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                q.append(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
-
-
-<br/>
-
-<br/>
-
-<h1 id="설명"><a href="#설명" class="headerlink" title="설명"></a>설명</h1><br/>
-
-<p>큐와 스택의 심화 문제다.<br>다리(bridge)의 상태를 큐로 표현하여 풀었다.</p>
-<p>문제에서 주어진 트럭의 무게 배열을 중심으로 while문을 이용한 풀이는 O(N<sup>3</sup>)를 보였다.<br>그러나 인터넷에는 bridge를 중심으로 풀이한 O(N<sup>2</sup>) 풀이가 있다.  </p>
-<p>python의 pop(0)은 O(N)을 가지는 것을 감안해도 매우 효율적인 방법이다.<br>당연히 풀이 코드 또한 훨씬 간결하다.  </p>
-<p>(인터넷의 풀이에는 sum을 while문 안에서 사용하여 효율성이 조금 떨어졌는데,<br>sum 변수를 활용하여 이를 개선시켰다.)</p>
-<p>앞으로도 문제에서 주어진 변수에만 집중하는 버릇을 경계해야겠다.</p>
-<br/>
-
-<br/></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">2021, 6월 30일, 수요일 오전 2:00</span><span class="level-item"><a class="link-muted" href="/categories/TIL/">TIL</a><span> / </span><a class="link-muted" href="/categories/TIL/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a><span> / </span><a class="link-muted" href="/categories/TIL/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/">프로그래머스</a><span> / </span><a class="link-muted" href="/categories/TIL/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/lv2/">lv2</a></span><span class="level-item">8분안에 읽기 (약 1132 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/06/30/ca45664bd4d5/">[프로그래머스] 문자열 압축</a></h1><img src="/img/programmers.png" width="80%" style="margin: 3.0em auto;display:block"><div class="content"><h1 id="문자열-압축"><a href="#문자열-압축" class="headerlink" title="문자열 압축"></a>문자열 압축</h1><p>JavaScript, Python</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">2021, 6월 30일, 수요일 오전 2:00</span><span class="level-item"><a class="link-muted" href="/categories/TIL/">TIL</a><span> / </span><a class="link-muted" href="/categories/TIL/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a><span> / </span><a class="link-muted" href="/categories/TIL/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/">프로그래머스</a><span> / </span><a class="link-muted" href="/categories/TIL/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/lv2/">lv2</a></span><span class="level-item">8분안에 읽기 (약 1132 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2021/06/30/ca45664bd4d5/">[프로그래머스] 문자열 압축</a></h1><img src="/img/programmers.png" width="80%" style="margin: 3.0em auto;display:block"><div class="content"><h1 id="문자열-압축"><a href="#문자열-압축" class="headerlink" title="문자열 압축"></a>문자열 압축</h1><p>JavaScript, Python</p>
 <blockquote>
 <h6 id="문제-설명"><a href="#문제-설명" class="headerlink" title="문제 설명"></a>문제 설명</h6><p>데이터 처리 전문가가 되고 싶은 “어피치”는 문자열을 압축하는 방법에 대해 공부를 하고 있습니다. 최근에 대량의 데이터 처리를 위한 간단한 비손실 압축 방법에 대해 공부를 하고 있는데, 문자열에서 같은 값이 연속해서 나타나는 것을 그 문자의 개수와 반복되는 값으로 표현하여 더 짧은 문자열로 줄여서 표현하는 알고리즘을 공부하고 있습니다.<br>간단한 예로 “aabbaccc”의 경우 “2a2ba3c”(문자가 반복되지 않아 한번만 나타난 경우 1은 생략함)와 같이 표현할 수 있는데, 이러한 방식은 반복되는 문자가 적은 경우 압축률이 낮다는 단점이 있습니다. 예를 들면, “abcabcdede”와 같은 문자열은 전혀 압축되지 않습니다. “어피치”는 이러한 단점을 해결하기 위해 문자열을 1개 이상의 단위로 잘라서 압축하여 더 짧은 문자열로 표현할 수 있는지 방법을 찾아보려고 합니다.</p>
 <p>예를 들어, “ababcdcdababcdcd”의 경우 문자를 1개 단위로 자르면 전혀 압축되지 않지만, 2개 단위로 잘라서 압축한다면 “2ab2cd2ab2cd”로 표현할 수 있습니다. 다른 방법으로 8개 단위로 잘라서 압축한다면 “2ababcdcd”로 표현할 수 있으며, 이때가 가장 짧게 압축하여 표현할 수 있는 방법입니다.</p>
