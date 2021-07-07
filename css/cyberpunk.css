@@ -11708,7 +11708,8 @@ body.night .hljs-meta-string {
   color: #98c379;
 }
 body.night .hljs-built_in,
-body.night .hljs-class .hljs-title {
+body.night .hljs-class,
+body.night .hljs-title {
   color: #e6c07b;
 }
 body.night .hljs-attr,
@@ -12064,7 +12065,8 @@ body.night .twikoo code {
     color: #98c379;
   }
   body:not(.light) .hljs-built_in,
-  body:not(.light) .hljs-class .hljs-title {
+  body:not(.light) .hljs-class,
+  body:not(.light) .hljs-title {
     color: #e6c07b;
   }
   body:not(.light) .hljs-attr,
